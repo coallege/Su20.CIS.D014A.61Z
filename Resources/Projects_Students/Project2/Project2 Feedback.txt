@@ -1,0 +1,14 @@
+Points:								Earned	(Max)
+
+1) Every procedure has a comment				____	(2)
+2) Block comment describing program at beginning of Class Form	____	(2)
+3) All objects follow the naming convention			____	(3)
+4) Form constructed correctly (Appearance only)			____	(2)
+5) Form starts up with correct defaults		 		____	(2)
+6) Program correctly calculates the cost of the meal.		____	(3)
+7) Program uses Event procedures				____	(1)
+8) Program uses IF statements correctly				____	(3)
+9) Program Reset works correctly				____	(2)
+
+
+TOTAL								____	(20)

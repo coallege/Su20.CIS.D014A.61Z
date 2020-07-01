@@ -1,0 +1,20 @@
+Points:							Earned	(Max)
+
+1) Every procedure has a comment			____	(1)
+2) Block comment at beginning of Class Form		____	(1)
+3) All objects follow the naming convention		____	(1)
+4) Forms constructed correctly (Appearance only)	____	(1)
+6) Program validates names when adding or deleting	____	(1)
+7) Program validates seating assignment when entered	____	(1)
+8) Program uses 2-D Array to store information		____	(2)
+9) Program uses at least 3 Sub or Function calls	____	(2)
+10) Program correctly adds passenger to plane/waitlist	____	(2)
+11) Program correctly deletes passenger from plane and
+    If waitlist not empty assigns 1st to that seat	____	(2)
+12) Program lists passengers correctly.			____	(3)
+13) Program Uses frmDisplay.vb correctly.		____	(3)
+14) Program Reset works correctly.			____	(2)
+15) Program can start up with passengers assigned	____	(3)
+
+
+TOTAL							____	(25)

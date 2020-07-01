@@ -1,0 +1,14 @@
+Points:								Earned	(Max)
+
+1) Every procedure has a comment				____	(2)
+2) Block comment describing program at beginning of Class Form	____	(2)
+3) All objects follow the naming convention			____	(4)
+4) Form constructed correctly (Appearance only)			____	(2)
+5) Program inputs data correctly and calculates Metric Values 	____	(2)
+6) Calculates the Metric Values correctly			____	(4)
+7) The displays the values using correct formatting	.	____	(2)
+8) Ensure the tab order is correct from Miles to button		____	(2)
+
+TOTAL								____	(20)
+
+Comments to Developer:

@@ -1,0 +1,16 @@
+Points:								Earned	(Max)
+
+1) Every procedure has a comment				____	(2)
+2) Block comment describing program at beginning of Class Form	____	(1)
+3) All objects follow the naming convention			____	(2)
+4) Form constructed correctly (Appearance only)			____	(2)
+6) Program validates only 5 cards may be selected		____	(2)
+7) Program uses For/Next or Do While loops correctly		____	(3)
+8) Program uses 2-D Array to store information			____	(2)
+9) Program uses Function calls to Check Poker hands		____	(3)
+10) Program produces correct Poker Hand description		____	(3)
+
+
+TOTAL								____	(20)
+
+Comments to Developer:

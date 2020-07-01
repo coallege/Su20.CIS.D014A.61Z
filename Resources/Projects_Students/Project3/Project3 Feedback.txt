@@ -1,0 +1,21 @@
+Points:								Earned	(Max)
+
+1) Every procedure has a comment				____	(2)
+2) Block comment describing program at beginning of Class Form	____	(1)
+3) All objects follow the naming convention			____	(2)
+4) Form(s) constructed correctly (Appearance only)		____	(1)
+5) Program validates text input. Error messages are:		____	(5)
+	"Must enter a Description."
+	"Year Purchased is not numeric."
+	"Year Purchased is not between 1900 and 9999"
+	"Purchase Amount is not numeric."
+	"Purchase Amount must be > zero."
+	"Years to Depreciate is not numeric."
+	"Number of years must be between 1 and 999."
+6) Program correctly calculates the depreciation amounts	____	(3)
+7) Program uses Iteration correctly				____	(3)
+8) Program uses at least 2 procedure or function calls		____	(3)
+
+TOTAL								____	(20)
+
+Comments to Developer:
