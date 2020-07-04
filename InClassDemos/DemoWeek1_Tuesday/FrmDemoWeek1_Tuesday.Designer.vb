@@ -23,31 +23,32 @@ Partial Class FrmDemoWeek1_Tuesday
    <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
       Me.BtnClose = New System.Windows.Forms.Button()
-      Me.SuspendLayout()
-      '
-      'BtnClose
-      '
-      Me.BtnClose.BackColor = System.Drawing.SystemColors.InactiveCaption
-      Me.BtnClose.Location = New System.Drawing.Point(85, 118)
-      Me.BtnClose.Name = "BtnClose"
-      Me.BtnClose.Size = New System.Drawing.Size(217, 117)
-      Me.BtnClose.TabIndex = 0
-      Me.BtnClose.Text = "Click to close this window"
-      Me.BtnClose.UseVisualStyleBackColor = False
-      '
-      'Form1
-      '
-      Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
-      Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(388, 364)
-      Me.Controls.Add(Me.BtnClose)
-      Me.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-      Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-      Me.Name = "Form1"
-      Me.Text = "Demo Week1 Tuesday"
-      Me.ResumeLayout(False)
+        Me.SuspendLayout()
+        '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.BtnClose.Location = New System.Drawing.Point(85, 118)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(217, 117)
+        Me.BtnClose.TabIndex = 0
+        Me.BtnClose.Text = "Click to close this window"
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'FrmDemoWeek1_Tuesday
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(388, 364)
+        Me.Controls.Add(Me.BtnClose)
+        Me.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Name = "FrmDemoWeek1_Tuesday"
+        Me.Text = "Demo Week1 Tuesday"
+        Me.ResumeLayout(False)
 
-   End Sub
+    End Sub
 
-   Friend WithEvents BtnClose As Button
+    Friend WithEvents BtnClose As Button
 End Class

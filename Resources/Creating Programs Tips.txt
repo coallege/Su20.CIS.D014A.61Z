@@ -1,0 +1,10 @@
+Creating Computer Programs
+
+1. Use arithmetic analogies to create logic.
+2. Always consider boundary conditions of logic.
+3. Think through algorithm using desk checking approaches.
+4. Test program after writing pieces of a logical section.
+5. Use data driven algorithms for flexibility.
+6. Always comment a logical section of code "what" or "why".
+7. Thoroughly test the program created.
+8. Include mechanisms for user to understand how to work the program.

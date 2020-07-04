@@ -5,7 +5,7 @@
 
    '***********************************************
    '*** Program: First vb demo of closing window
-   '*** Author : Cole Gannon
+   '*** Author : Cole Gannon but I copied Mr. Linn
    '*** Date   : 2020.06.30
    '***********************************************
    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
