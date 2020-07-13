@@ -1,5 +1,6 @@
 *.rtf linguist-generated
 /InClassDemos/ linguist-vendored
+/Resources/ linguist-vendored
 
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
