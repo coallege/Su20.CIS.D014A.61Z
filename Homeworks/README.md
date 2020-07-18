@@ -10,6 +10,6 @@ Select the `<pre>` that you want to copy from.
 
 Run [this code](./copyTextFromTextbook.js)
 
-We're all good
-
 ![](2020-07-16-17-21-05.png)
+
+Get icced, Redshelf.
