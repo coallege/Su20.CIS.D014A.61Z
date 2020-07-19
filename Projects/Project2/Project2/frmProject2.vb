@@ -9,6 +9,11 @@
   Dim radArray As RadioButton()
 
   Sub frmProject2_Load() Handles MyBase.Load
+    ' Initialize a bunch of variables we're going to be working with the entire lifecycle
+
+    ' Close the form if btnClose is clicked
+    AddHandler btnClose.Click, AddressOf Close
+
     ' Initialize the list of RadioButtons
     ' We have to wait until Load, otherwise these buttons are Nothing
     radArray = {
@@ -26,24 +31,30 @@
       radGrpDrinks_water
     }
 
-    ' Add the price to each RadioButton
+    ' Add the price display to each RadioButton
     For Each radCurrent As RadioButton In radArray
       radCurrent.Text &= $" ({radCurrent.Tag})"
     Next
   End Sub
 
   Sub Reset() Handles MyBase.Load, btnReset.Click
-    ' Reset the form to it's default state. This is called on form load too.
+    ' Reset the form to it's default state. This is called on form load.
     chkBurgers.Checked = False
     chkFries.Checked = False
     chkDrinks.Checked = False
     lblOutput.Text = "Ready for next meal..."
 
-    ' Reset each RadioButton
+    ' Uncheck each RadioButton
     For Each radCurrent As RadioButton In radArray
       radCurrent.Checked = False
     Next
+
+    ' Check these three
+    radGrpBurgers_regular.Checked = True
+    radGrpFries_small.Checked = True
+    radGrpDrinks_soda.Checked = True
   End Sub
+
   Private Sub chkBurgers_CheckedChanged() Handles chkBurgers.CheckedChanged
     ' Controls the visibility of the burgers group
     grpBurgers.Visible = chkBurgers.Checked
@@ -61,8 +72,8 @@
 
   Private Sub btnTotal_Click() Handles btnTotal.Click
     ' Display output or errors to the user. If the user has selected items, show the total.
-    Dim bolAnyRadChecked = Array.Exists(radArray, Function(radCurrent) radCurrent.Checked)
-    If bolAnyRadChecked Then
+    Dim bolAnythingChecked = chkBurgers.Checked OrElse chkFries.Checked OrElse chkDrinks.Checked
+    If bolAnythingChecked Then
       Dim dblTotalCost = calcTotal()
       Dim strTotalCost = $"Total Cost: ${Math.Round(dblTotalCost, 2)}"
       lblOutput.Text = strTotalCost
@@ -73,13 +84,16 @@
 
   Private Function calcTotal() As Double
     ' Get the total value of the Tags from each RadioButton that is checked
-    Return radArray.Aggregate(0.0,
-      Function(dblRunningTotal, radCurrent) _
-        dblRunningTotal + If(radCurrent.Checked, CDbl(radCurrent.Tag), 0.0))
+    Return radArray.Aggregate(0.0, ' Sum it up starting at 0.0
+      Function(dblRunningTotal, radCurrent) dblRunningTotal + getFunctionalTotal(radCurrent))
   End Function
 
-  Private Sub btnClose_Click() Handles btnClose.Click
-    ' Close the form
-    Close()
-  End Sub
+  Private Function getFunctionalTotal(radCurrent As RadioButton)
+    ' Gets the functional (as in practical) total of the RadioButton
+    If radCurrent.Parent.Visible And radCurrent.Checked Then
+      Return CDbl(radCurrent.Tag)
+    Else
+      Return 0.0
+    End If
+  End Function
 End Class

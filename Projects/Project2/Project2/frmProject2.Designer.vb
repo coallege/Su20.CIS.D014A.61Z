@@ -55,9 +55,9 @@ Partial Class frmProject2
         '
         Me.chkBurgers.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.chkBurgers.AutoSize = True
-        Me.chkBurgers.Location = New System.Drawing.Point(24, 65)
+        Me.chkBurgers.Location = New System.Drawing.Point(31, 66)
         Me.chkBurgers.Name = "chkBurgers"
-        Me.chkBurgers.Size = New System.Drawing.Size(82, 22)
+        Me.chkBurgers.Size = New System.Drawing.Size(69, 19)
         Me.chkBurgers.TabIndex = 0
         Me.chkBurgers.Text = "Burgers"
         Me.chkBurgers.UseVisualStyleBackColor = True
@@ -105,9 +105,9 @@ Partial Class frmProject2
         '
         Me.chkFries.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.chkFries.AutoSize = True
-        Me.chkFries.Location = New System.Drawing.Point(34, 199)
+        Me.chkFries.Location = New System.Drawing.Point(39, 200)
         Me.chkFries.Name = "chkFries"
-        Me.chkFries.Size = New System.Drawing.Size(63, 22)
+        Me.chkFries.Size = New System.Drawing.Size(53, 19)
         Me.chkFries.TabIndex = 1
         Me.chkFries.Text = "Fries"
         Me.chkFries.UseVisualStyleBackColor = True
@@ -116,9 +116,9 @@ Partial Class frmProject2
         '
         Me.chkDrinks.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.chkDrinks.AutoSize = True
-        Me.chkDrinks.Location = New System.Drawing.Point(29, 333)
+        Me.chkDrinks.Location = New System.Drawing.Point(35, 335)
         Me.chkDrinks.Name = "chkDrinks"
-        Me.chkDrinks.Size = New System.Drawing.Size(73, 22)
+        Me.chkDrinks.Size = New System.Drawing.Size(61, 19)
         Me.chkDrinks.TabIndex = 2
         Me.chkDrinks.Text = "Drinks"
         Me.chkDrinks.UseVisualStyleBackColor = True
@@ -143,7 +143,7 @@ Partial Class frmProject2
         Me.radGrpBurgers_cheesebacon.AutoSize = True
         Me.radGrpBurgers_cheesebacon.Location = New System.Drawing.Point(6, 96)
         Me.radGrpBurgers_cheesebacon.Name = "radGrpBurgers_cheesebacon"
-        Me.radGrpBurgers_cheesebacon.Size = New System.Drawing.Size(156, 22)
+        Me.radGrpBurgers_cheesebacon.Size = New System.Drawing.Size(128, 19)
         Me.radGrpBurgers_cheesebacon.TabIndex = 3
         Me.radGrpBurgers_cheesebacon.TabStop = True
         Me.radGrpBurgers_cheesebacon.Tag = "5.39"
@@ -155,7 +155,7 @@ Partial Class frmProject2
         Me.radGrpBurgers_bacon.AutoSize = True
         Me.radGrpBurgers_bacon.Location = New System.Drawing.Point(6, 71)
         Me.radGrpBurgers_bacon.Name = "radGrpBurgers_bacon"
-        Me.radGrpBurgers_bacon.Size = New System.Drawing.Size(87, 22)
+        Me.radGrpBurgers_bacon.Size = New System.Drawing.Size(72, 19)
         Me.radGrpBurgers_bacon.TabIndex = 2
         Me.radGrpBurgers_bacon.TabStop = True
         Me.radGrpBurgers_bacon.Tag = "4.79"
@@ -167,7 +167,7 @@ Partial Class frmProject2
         Me.radGrpBurgers_cheese.AutoSize = True
         Me.radGrpBurgers_cheese.Location = New System.Drawing.Point(7, 46)
         Me.radGrpBurgers_cheese.Name = "radGrpBurgers_cheese"
-        Me.radGrpBurgers_cheese.Size = New System.Drawing.Size(95, 22)
+        Me.radGrpBurgers_cheese.Size = New System.Drawing.Size(79, 19)
         Me.radGrpBurgers_cheese.TabIndex = 1
         Me.radGrpBurgers_cheese.TabStop = True
         Me.radGrpBurgers_cheese.Tag = "4.79"
@@ -179,7 +179,7 @@ Partial Class frmProject2
         Me.radGrpBurgers_regular.AutoSize = True
         Me.radGrpBurgers_regular.Location = New System.Drawing.Point(7, 21)
         Me.radGrpBurgers_regular.Name = "radGrpBurgers_regular"
-        Me.radGrpBurgers_regular.Size = New System.Drawing.Size(80, 22)
+        Me.radGrpBurgers_regular.Size = New System.Drawing.Size(69, 19)
         Me.radGrpBurgers_regular.TabIndex = 0
         Me.radGrpBurgers_regular.TabStop = True
         Me.radGrpBurgers_regular.Tag = "4.19"
@@ -205,7 +205,7 @@ Partial Class frmProject2
         Me.radGrpFries_large.AutoSize = True
         Me.radGrpFries_large.Location = New System.Drawing.Point(6, 72)
         Me.radGrpFries_large.Name = "radGrpFries_large"
-        Me.radGrpFries_large.Size = New System.Drawing.Size(66, 22)
+        Me.radGrpFries_large.Size = New System.Drawing.Size(57, 19)
         Me.radGrpFries_large.TabIndex = 2
         Me.radGrpFries_large.TabStop = True
         Me.radGrpFries_large.Tag = "4.99"
@@ -217,7 +217,7 @@ Partial Class frmProject2
         Me.radGrpFries_medium.AutoSize = True
         Me.radGrpFries_medium.Location = New System.Drawing.Point(6, 46)
         Me.radGrpFries_medium.Name = "radGrpFries_medium"
-        Me.radGrpFries_medium.Size = New System.Drawing.Size(82, 22)
+        Me.radGrpFries_medium.Size = New System.Drawing.Size(71, 19)
         Me.radGrpFries_medium.TabIndex = 1
         Me.radGrpFries_medium.TabStop = True
         Me.radGrpFries_medium.Tag = "3.09"
@@ -229,7 +229,7 @@ Partial Class frmProject2
         Me.radGrpFries_small.AutoSize = True
         Me.radGrpFries_small.Location = New System.Drawing.Point(7, 20)
         Me.radGrpFries_small.Name = "radGrpFries_small"
-        Me.radGrpFries_small.Size = New System.Drawing.Size(66, 22)
+        Me.radGrpFries_small.Size = New System.Drawing.Size(57, 19)
         Me.radGrpFries_small.TabIndex = 0
         Me.radGrpFries_small.TabStop = True
         Me.radGrpFries_small.Tag = "2.39"
@@ -254,7 +254,7 @@ Partial Class frmProject2
         Me.radGrpDrinks_water.AutoSize = True
         Me.radGrpDrinks_water.Location = New System.Drawing.Point(7, 53)
         Me.radGrpDrinks_water.Name = "radGrpDrinks_water"
-        Me.radGrpDrinks_water.Size = New System.Drawing.Size(119, 22)
+        Me.radGrpDrinks_water.Size = New System.Drawing.Size(98, 19)
         Me.radGrpDrinks_water.TabIndex = 1
         Me.radGrpDrinks_water.TabStop = True
         Me.radGrpDrinks_water.Tag = "1.49"
@@ -266,7 +266,7 @@ Partial Class frmProject2
         Me.radGrpDrinks_soda.AutoSize = True
         Me.radGrpDrinks_soda.Location = New System.Drawing.Point(7, 27)
         Me.radGrpDrinks_soda.Name = "radGrpDrinks_soda"
-        Me.radGrpDrinks_soda.Size = New System.Drawing.Size(64, 22)
+        Me.radGrpDrinks_soda.Size = New System.Drawing.Size(54, 19)
         Me.radGrpDrinks_soda.TabIndex = 0
         Me.radGrpDrinks_soda.TabStop = True
         Me.radGrpDrinks_soda.Tag = "1.69"
@@ -300,9 +300,9 @@ Partial Class frmProject2
         Me.lblOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOutput.Location = New System.Drawing.Point(3, 76)
         Me.lblOutput.Name = "lblOutput"
-        Me.lblOutput.Size = New System.Drawing.Size(164, 54)
+        Me.lblOutput.Size = New System.Drawing.Size(147, 15)
         Me.lblOutput.TabIndex = 5
-        Me.lblOutput.Text = "If you see this during" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "runtime, something" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "awful has happened."
+        Me.lblOutput.Text = "Ready for next meal..."
         '
         'btnReset
         '
@@ -316,7 +316,7 @@ Partial Class frmProject2
         '
         'frmProject2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 421)
         Me.Controls.Add(Me.tblLayout)
