@@ -8,6 +8,6 @@
   End Sub
 
   Function SquareIt(val As Long) As Single
-    Return val * val
+    SquareIt = val * val
   End Function
 End Module
