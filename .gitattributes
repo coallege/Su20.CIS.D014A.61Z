@@ -1,7 +1,7 @@
-/InClassDemos/**    linguist-vendored
-/Resources/**       linguist-vendored
-*.rtf               linguist-generated
-*.Designer.vb       linguist-generated
+/InClassDemos/**     linguist-vendored
+/Resources/**        linguist-vendored
+*.rtf                linguist-generated
+*.Designer.vb        linguist-generated
 "**/My Project/**"   linguist-generated
 
 *.sln        text eol=crlf linguist-generated
