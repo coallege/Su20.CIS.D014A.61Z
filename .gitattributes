@@ -1,8 +1,8 @@
 /InClassDemos/**     linguist-vendored
 /Resources/**        linguist-vendored
 *.rtf                linguist-generated
-*.Designer.vb        linguist-generated
-"**/My Project/**"   linguist-generated
+*.Designer.vb        linguist-generated -linguist-detectable
+"**/My Project/**"   linguist-generated -linguist-detectable
 
 *.sln        text eol=crlf linguist-generated
 *.csproj     text eol=crlf linguist-generated
