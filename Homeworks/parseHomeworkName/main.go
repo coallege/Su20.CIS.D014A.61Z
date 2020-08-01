@@ -10,14 +10,19 @@ var txtInput, txtOutput *walk.TextEdit
 func main() {
 	MainWindow{
 		Title: "Parse Homework Name",
-		Size:  Size{500, 200},
+		// the VBox will make the minimum size = to the TextLabel
+		// so it's okay to have the Width be 1
+		Size: Size{Width: 1, Height: 300},
 		Font: Font{
 			Family:    "Consolas",
 			PointSize: 12,
 		},
-		Layout: HBox{}, // bair
+		Layout: VBox{}, // bair
 		Children: []Widget{
-			HSplitter{
+			TextLabel{
+				Text: "Enter the homework or assignment name into the top Text Area",
+			},
+			VSplitter{
 				Children: []Widget{
 					TextEdit{
 						AssignTo: &txtInput,
