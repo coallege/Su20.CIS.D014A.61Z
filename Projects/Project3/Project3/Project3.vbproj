@@ -73,7 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="DoubleDecliningBalance.vb" />
+    <Compile Include="DepreciatedYear.vb" />
+    <Compile Include="StraightLineBalance.vb" />
+    <Compile Include="Depreciation.vb" />
     <Compile Include="frmSchedule.Designer.vb">
       <DependentUpon>frmSchedule.vb</DependentUpon>
     </Compile>
