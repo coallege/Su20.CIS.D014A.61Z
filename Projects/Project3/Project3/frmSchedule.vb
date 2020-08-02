@@ -11,4 +11,8 @@
   Private Sub frmSchedule_Load() Handles MyBase.Load
     AddHandler btnClose.Click, AddressOf Close
   End Sub
+
+  Private Sub txtDisplay_TextChanged(sender As Object, e As EventArgs) Handles txtDisplay.TextChanged
+
+  End Sub
 End Class
