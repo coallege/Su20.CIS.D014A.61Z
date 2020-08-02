@@ -26,18 +26,18 @@ Partial Class frmProject3Main
         Me.lblDescription = New System.Windows.Forms.Label()
         Me.txtDescription = New System.Windows.Forms.TextBox()
         Me.lblYear = New System.Windows.Forms.Label()
-        Me.txtYear = New System.Windows.Forms.TextBox()
+        Me.txtYearPurchased = New System.Windows.Forms.TextBox()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.lblYearsLeft = New System.Windows.Forms.Label()
         Me.txtYearsLeft = New System.Windows.Forms.TextBox()
         Me.grpMethod = New System.Windows.Forms.GroupBox()
-        Me.radStraightLine = New System.Windows.Forms.RadioButton()
         Me.radDoubleDeclining = New System.Windows.Forms.RadioButton()
+        Me.radStraightLine = New System.Windows.Forms.RadioButton()
         Me.tblButtons = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnCalc = New System.Windows.Forms.Button()
-        Me.btnRestart = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnRestart = New System.Windows.Forms.Button()
+        Me.btnCalc = New System.Windows.Forms.Button()
         Me.grpMethod.SuspendLayout()
         Me.tblButtons.SuspendLayout()
         Me.SuspendLayout()
@@ -79,12 +79,12 @@ Partial Class frmProject3Main
         Me.lblYear.TabIndex = 3
         Me.lblYear.Text = "&Year Purchased:"
         '
-        'txtYear
+        'txtYearPurchased
         '
-        Me.txtYear.Location = New System.Drawing.Point(164, 78)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(180, 24)
-        Me.txtYear.TabIndex = 4
+        Me.txtYearPurchased.Location = New System.Drawing.Point(164, 78)
+        Me.txtYearPurchased.Name = "txtYearPurchased"
+        Me.txtYearPurchased.Size = New System.Drawing.Size(180, 24)
+        Me.txtYearPurchased.TabIndex = 4
         '
         'lblAmount
         '
@@ -130,6 +130,17 @@ Partial Class frmProject3Main
         Me.grpMethod.TabStop = False
         Me.grpMethod.Text = "Select a Depreciation Method"
         '
+        'radDoubleDeclining
+        '
+        Me.radDoubleDeclining.AutoSize = True
+        Me.radDoubleDeclining.Location = New System.Drawing.Point(19, 52)
+        Me.radDoubleDeclining.Name = "radDoubleDeclining"
+        Me.radDoubleDeclining.Size = New System.Drawing.Size(223, 22)
+        Me.radDoubleDeclining.TabIndex = 1
+        Me.radDoubleDeclining.TabStop = True
+        Me.radDoubleDeclining.Text = "Double-declining Method (2/n)"
+        Me.radDoubleDeclining.UseVisualStyleBackColor = True
+        '
         'radStraightLine
         '
         Me.radStraightLine.AutoSize = True
@@ -141,17 +152,6 @@ Partial Class frmProject3Main
         Me.radStraightLine.TabStop = True
         Me.radStraightLine.Text = "Straight-line Method (1/n)"
         Me.radStraightLine.UseVisualStyleBackColor = True
-        '
-        'radDoubleDeclining
-        '
-        Me.radDoubleDeclining.AutoSize = True
-        Me.radDoubleDeclining.Location = New System.Drawing.Point(19, 52)
-        Me.radDoubleDeclining.Name = "radDoubleDeclining"
-        Me.radDoubleDeclining.Size = New System.Drawing.Size(223, 22)
-        Me.radDoubleDeclining.TabIndex = 1
-        Me.radDoubleDeclining.TabStop = True
-        Me.radDoubleDeclining.Text = "Double-declining Method (2/n)"
-        Me.radDoubleDeclining.UseVisualStyleBackColor = True
         '
         'tblButtons
         '
@@ -169,26 +169,6 @@ Partial Class frmProject3Main
         Me.tblButtons.Size = New System.Drawing.Size(479, 71)
         Me.tblButtons.TabIndex = 10
         '
-        'btnCalc
-        '
-        Me.btnCalc.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnCalc.Location = New System.Drawing.Point(12, 18)
-        Me.btnCalc.Name = "btnCalc"
-        Me.btnCalc.Size = New System.Drawing.Size(135, 34)
-        Me.btnCalc.TabIndex = 0
-        Me.btnCalc.Text = "&Show Calculation"
-        Me.btnCalc.UseVisualStyleBackColor = True
-        '
-        'btnRestart
-        '
-        Me.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnRestart.Location = New System.Drawing.Point(171, 18)
-        Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(135, 34)
-        Me.btnRestart.TabIndex = 1
-        Me.btnRestart.Text = "&ReStart"
-        Me.btnRestart.UseVisualStyleBackColor = True
-        '
         'btnClose
         '
         Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -198,6 +178,26 @@ Partial Class frmProject3Main
         Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "&Close"
         Me.btnClose.UseVisualStyleBackColor = True
+        '
+        'btnRestart
+        '
+        Me.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnRestart.Location = New System.Drawing.Point(171, 18)
+        Me.btnRestart.Name = "btnRestart"
+        Me.btnRestart.Size = New System.Drawing.Size(135, 34)
+        Me.btnRestart.TabIndex = 1
+        Me.btnRestart.Text = "&Restart"
+        Me.btnRestart.UseVisualStyleBackColor = True
+        '
+        'btnCalc
+        '
+        Me.btnCalc.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnCalc.Location = New System.Drawing.Point(12, 18)
+        Me.btnCalc.Name = "btnCalc"
+        Me.btnCalc.Size = New System.Drawing.Size(135, 34)
+        Me.btnCalc.TabIndex = 0
+        Me.btnCalc.Text = "&Show Calculation"
+        Me.btnCalc.UseVisualStyleBackColor = True
         '
         'frmProject3Main
         '
@@ -210,14 +210,14 @@ Partial Class frmProject3Main
         Me.Controls.Add(Me.lblYearsLeft)
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.lblAmount)
-        Me.Controls.Add(Me.txtYear)
+        Me.Controls.Add(Me.txtYearPurchased)
         Me.Controls.Add(Me.lblYear)
         Me.Controls.Add(Me.txtDescription)
         Me.Controls.Add(Me.lblDescription)
         Me.Controls.Add(Me.lblTitle)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "frmProject3Main"
         Me.Text = "Project3: Depreciation to a Salvage Value of Zero"
@@ -233,7 +233,7 @@ Partial Class frmProject3Main
     Friend WithEvents lblDescription As Label
     Friend WithEvents txtDescription As TextBox
     Friend WithEvents lblYear As Label
-    Friend WithEvents txtYear As TextBox
+    Friend WithEvents txtYearPurchased As TextBox
     Friend WithEvents lblAmount As Label
     Friend WithEvents txtAmount As TextBox
     Friend WithEvents lblYearsLeft As Label
