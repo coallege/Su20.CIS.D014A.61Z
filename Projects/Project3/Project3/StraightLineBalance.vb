@@ -5,18 +5,18 @@
   Public Overrides Sub ForEachYear(fn As DepreciatedYearConsumer)
     Dim currentValue As Double = PurchaseAmount
     Dim yearlyDepreciation As Double = PurchaseAmount / EstimatedLife
-    For lifeLeft As UShort = 0 To EstimatedLife
-      Dim valueAtBeginning = currentValue
+    For yearsDepreciated As UShort = 0 To (EstimatedLife - 1)
+      Dim DY As DepreciatedYear
+      ' Always the same
+      DY.MethodName = MethodName
+      DY.AmountDepreciated = yearlyDepreciation
+
+      DY.Year = PurchaseYear + yearsDepreciated
+      DY.LifeLeft = EstimatedLife - yearsDepreciated
+      DY.ValueAtBeginning = currentValue
       currentValue -= yearlyDepreciation
-      Dim valueAtEnd = currentValue
-      Dim DY = New DepreciatedYear With {
-        .Year = PurchaseYear + lifeLeft,
-        .LifeLeft = lifeLeft,
-        .ValueAtBeginning = valueAtBeginning,
-        .AmountDepreciated = yearlyDepreciation,
-        .ValueAtEnd = valueAtEnd,
-        .MethodName = MethodName
-      }
+      DY.ValueAtEnd = currentValue
+
       fn(DY)
     Next
   End Sub
