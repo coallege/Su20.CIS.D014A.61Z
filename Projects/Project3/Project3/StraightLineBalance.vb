@@ -1,7 +1,18 @@
-﻿Public MustInherit Class StraightLineBalance
+﻿Public Class StraightLineBalance
   Inherits Depreciation
 
-  Public Shadows MethodName As String = "straight-line-balance"
+  Public Sub New(
+    asset As String,
+    purchaseYear As UShort,
+    purchaseAmount As Double,
+    estimatedLife As UShort
+  )
+    Me.Description = asset
+    Me.PurchaseYear = purchaseYear
+    Me.PurchaseAmount = purchaseAmount
+    Me.EstimatedLife = estimatedLife
+    Me.MethodName = "straight-line-balance"
+  End Sub
   Public Overrides Sub ForEachYear(fn As DepreciatedYearConsumer)
     Dim currentValue As Double = PurchaseAmount
     Dim yearlyDepreciation As Double = PurchaseAmount / EstimatedLife
@@ -16,7 +27,7 @@
       DY.ValueAtBeginning = currentValue
       currentValue -= yearlyDepreciation
       DY.ValueAtEnd = currentValue
-
+      DY.TotalDepreciation = PurchaseAmount - currentValue
       fn(DY)
     Next
   End Sub

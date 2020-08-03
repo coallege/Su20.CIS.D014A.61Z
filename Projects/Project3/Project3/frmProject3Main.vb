@@ -20,8 +20,17 @@
     txtAmount.Text = txtAmount.Tag
     txtYearsLeft.Text = txtYearsLeft.Tag
 
+    Debug()
+
     radStraightLine.Checked = True
     radDoubleDeclining.Checked = False
+  End Sub
+
+  Private Sub Debug()
+    txtDescription.Text = "Car"
+    txtYearPurchased.Text = "2000"
+    txtAmount.Text = "20000"
+    txtYearsLeft.Text = "5"
   End Sub
 
   Private Sub btnClose_Click() Handles btnClose.Click
@@ -30,55 +39,86 @@
   End Sub
 
   Private Sub btnCalc_Click() Handles btnCalc.Click
+    ' Performs verification on inputs then
+    ' makes a Depreciation to hand off to frmSchedule
+
+    ' Description
     If txtDescription.Text = txtDescription.Tag Then
       MsgBox("Must enter a Description.")
       Return
     End If
 
+    Dim strDescription = txtDescription.Text
 
+    ' Year purchased
     If Not IsNumeric(txtYearPurchased.Text) Then
       MsgBox("Year Purchased is not numeric.")
       Return
     End If
 
-    Dim yearPurchased As Integer
-    If Not Integer.TryParse(txtYearPurchased.Text, yearPurchased) Then
+    Dim intYearPurchased As Integer
+
+    If Not Integer.TryParse(txtYearPurchased.Text, intYearPurchased) Then
       MsgBox("Year Purchased is not an Integer.")
       Return
     End If
 
-    If yearPurchased < 1900.0 Or yearPurchased > 9999.0 Then
+    If intYearPurchased < 1900.0 Or intYearPurchased > 9999.0 Then
       MsgBox("Year Purchased is not between 1900 and 9999.")
       Return
     End If
 
+    Dim uintYearPurchased As UShort = intYearPurchased
+
+    ' Purchase amount
     If Not IsNumeric(txtAmount.Text) Then
       MsgBox("Purchase Amount is not numeric.")
       Return
     End If
 
-    Dim purchaseAmount = CDbl(txtAmount.Text)
-    If purchaseAmount < 0.0 Then
+    Dim dblPurchaseAmount = CDbl(txtAmount.Text)
+    If dblPurchaseAmount < 0.0 Then
       MsgBox("Purchase Amount must be > zero.")
       Return
     End If
 
+    ' Years to Depreciate
     If Not IsNumeric(txtYearsLeft.Text) Then
       MsgBox("Years to Depreciate is not numeric.")
       Return
     End If
 
-    Dim yearsLeft As Integer
-    If Not Integer.TryParse(txtYearsLeft.Text, yearsLeft) Then
+    Dim intYearsLeft As Integer
+    If Not Integer.TryParse(txtYearsLeft.Text, intYearsLeft) Then
       MsgBox("Year to Depreciate is not an Integer.")
       Return
     End If
 
-    If yearsLeft < 1 Or yearsLeft > 999 Then
+    If intYearsLeft < 1 Or intYearsLeft > 999 Then
       MsgBox("Number of years must be between 1 and 999.")
       Return
     End If
 
+    Dim uintYearsLeft As UShort = intYearsLeft
     ' verification good
+
+    Dim dpMethod As Depreciation
+
+    If radStraightLine.Checked Then
+      dpMethod = New StraightLineBalance(
+        asset:=strDescription,
+        purchaseYear:=uintYearPurchased,
+        purchaseAmount:=dblPurchaseAmount,
+        estimatedLife:=uintYearsLeft
+      )
+    Else
+      dpMethod = New DoubleDecliningBalance(
+        asset:=strDescription,
+        purchaseYear:=uintYearPurchased,
+        purchaseAmount:=dblPurchaseAmount,
+        estimatedLife:=uintYearsLeft
+      )
+    End If
+    frmSchedule.DisplayDepreciation(dpMethod)
   End Sub
 End Class

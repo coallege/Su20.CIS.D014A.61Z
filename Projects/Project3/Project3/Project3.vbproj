@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepreciatedYearConsumer.vb" />
     <Compile Include="DoubleDecliningBalance.vb" />
     <Compile Include="DepreciatedYear.vb" />
     <Compile Include="StraightLineBalance.vb" />

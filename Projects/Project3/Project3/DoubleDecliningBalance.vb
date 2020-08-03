@@ -1,7 +1,18 @@
-﻿Public MustInherit Class DoubleDecliningBalance
+﻿Public Class DoubleDecliningBalance
   Inherits Depreciation
 
-  Public Shadows MethodName As String = "double-declining-balance"
+  Public Sub New(
+    asset As String,
+    purchaseYear As UShort,
+    purchaseAmount As Double,
+    estimatedLife As UShort
+  )
+    Me.Description = asset
+    Me.PurchaseYear = purchaseYear
+    Me.PurchaseAmount = purchaseAmount
+    Me.EstimatedLife = estimatedLife
+    Me.MethodName = "double-declining-balance"
+  End Sub
   Public Overrides Sub ForEachYear(fn As DepreciatedYearConsumer)
     Dim currentValue As Double = PurchaseAmount
     For yearsDepreciated As UShort = 0 To (EstimatedLife - 2) ' The last year has a special case
@@ -13,6 +24,7 @@
       DY.AmountDepreciated = DY.ValueAtBeginning * 2 / PurchaseAmount
       currentValue -= DY.AmountDepreciated
       DY.ValueAtEnd = currentValue
+      DY.TotalDepreciation = PurchaseAmount - currentValue
       fn(DY)
     Next
     ' Special last case
@@ -22,6 +34,7 @@
         .ValueAtBeginning = currentValue,
         .AmountDepreciated = currentValue,
         .ValueAtEnd = 0,
+        .TotalDepreciation = PurchaseAmount,
         .MethodName = MethodName
       }
     )

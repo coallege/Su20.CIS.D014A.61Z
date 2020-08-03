@@ -1,6 +1,38 @@
-﻿Public Class frmSchedule
-  Public Overloads Sub ShowDialog(strText As String)
-    ShowDialog()
+﻿Imports System.Text
+
+Public Class frmSchedule
+  Private Shared Function FmtMoney(money As Double) As String
+    Return money.ToString("$#,###,##0.00").PadLeft(16)
+  End Function
+
+  Public Shared Sub DisplayDepreciation(dp As Depreciation)
+    Dim sb = New StringBuilder(1000)
+    sb.AppendLine($"Date/Time of Report   : {Now}")
+    sb.AppendLine()
+    sb.AppendLine($"Description           : {dp.Description}")
+    sb.AppendLine($"Year of purchase      : {dp.PurchaseYear}")
+    sb.AppendLine($"Cost                  : {dp.PurchaseAmount:$#,###,##0.00}")
+    sb.AppendLine($"Estimated Life        : {dp.EstimatedLife}")
+    sb.AppendLine($"Method of depreciation: {dp.MethodName}")
+    sb.AppendLine()
+    sb.AppendLine($"         Value at      Amount Deprec    Total Depreciation")
+    sb.AppendLine($"Year     beg of Yr     During Year      to End of Year")
+
+    dp.ForEachYear(
+      Sub(dy)
+        Dim strValueAtBeg = FmtMoney(dy.ValueAtBeginning)
+        Dim strAmtDepDuringYr = FmtMoney(dy.AmountDepreciated)
+        Dim strTotalDepAtEnd = FmtMoney(dy.TotalDepreciation)
+        sb.AppendLine(
+          $"{dy.Year}{strValueAtBeg}{strAmtDepDuringYr}{strTotalDepAtEnd}"
+        )
+      End Sub
+    )
+    ' Make the Window instance, set the text, and display it
+    Dim instance = New frmSchedule
+    instance.txtDisplay.Text = sb.ToString
+    instance.txtDisplay.SelectionStart = 0 ' So the entire thing isn't highlighted
+    instance.ShowDialog()
   End Sub
   Private Sub frmSchedule_Resize() Handles Me.Resize
     ' Makes that little drag thing on the bottom right side of the form useable
@@ -10,9 +42,5 @@
 
   Private Sub frmSchedule_Load() Handles MyBase.Load
     AddHandler btnClose.Click, AddressOf Close
-  End Sub
-
-  Private Sub txtDisplay_TextChanged(sender As Object, e As EventArgs) Handles txtDisplay.TextChanged
-
   End Sub
 End Class

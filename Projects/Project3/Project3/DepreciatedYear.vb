@@ -4,5 +4,6 @@
   Public ValueAtBeginning As Double
   Public AmountDepreciated As Double
   Public ValueAtEnd As Double
+  Public TotalDepreciation As Double
   Public MethodName As String
 End Structure

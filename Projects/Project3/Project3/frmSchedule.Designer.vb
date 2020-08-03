@@ -31,13 +31,15 @@ Partial Class frmSchedule
         'txtDisplay
         '
         Me.txtDisplay.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtDisplay.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDisplay.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDisplay.Location = New System.Drawing.Point(17, 16)
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
+        Me.txtDisplay.ReadOnly = True
         Me.txtDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtDisplay.Size = New System.Drawing.Size(455, 258)
+        Me.txtDisplay.Size = New System.Drawing.Size(505, 258)
         Me.txtDisplay.TabIndex = 0
+        Me.txtDisplay.WordWrap = False
         '
         'tblLayout
         '
@@ -52,13 +54,13 @@ Partial Class frmSchedule
         Me.tblLayout.RowCount = 2
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62.0!))
-        Me.tblLayout.Size = New System.Drawing.Size(475, 352)
+        Me.tblLayout.Size = New System.Drawing.Size(525, 352)
         Me.tblLayout.TabIndex = 2
         '
         'btnClose
         '
         Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnClose.Location = New System.Drawing.Point(198, 289)
+        Me.btnClose.Location = New System.Drawing.Point(223, 289)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(93, 37)
         Me.btnClose.TabIndex = 1
@@ -69,7 +71,7 @@ Partial Class frmSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 361)
+        Me.ClientSize = New System.Drawing.Size(534, 361)
         Me.Controls.Add(Me.tblLayout)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MinimumSize = New System.Drawing.Size(400, 300)
