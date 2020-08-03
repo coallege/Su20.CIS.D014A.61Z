@@ -1,6 +1,12 @@
 ﻿Imports System.Text
 
 Public Class frmSchedule
+  '****************************************************************
+  '*** Program: Project3.frmSchedule - The form to show what the
+  '***        : Depreciation Schedule is
+  '*** Author : Cole Gannon
+  '*** Date   : 08/02/2020
+  '****************************************************************
   Private Shared Function FmtMoney(money As Double) As String
     ' Static method to just format the money correctly
     Return money.ToString("$#,###,##0.00").PadLeft(15)
@@ -47,5 +53,9 @@ Public Class frmSchedule
   Private Sub btnClose_Click() Handles btnClose.Click
     ' Close the form
     Close()
+  End Sub
+
+  Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
   End Sub
 End Class
