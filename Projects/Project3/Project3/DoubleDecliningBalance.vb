@@ -2,18 +2,21 @@
   Inherits Depreciation
 
   Public Sub New(
-    asset As String,
+    desc As String,
     purchaseYear As UShort,
     purchaseAmount As Double,
     estimatedLife As UShort
   )
-    Me.Description = asset
+    ' Initialize the DoubleDecliningBalance
+    Me.Description = desc
     Me.PurchaseYear = purchaseYear
     Me.PurchaseAmount = purchaseAmount
     Me.EstimatedLife = estimatedLife
     Me.MethodName = "double-declining-balance"
   End Sub
+
   Public Overrides Sub ForEachYear(fn As DepreciatedYearConsumer)
+    ' Go through each year and calculate the DepreciatedYear struct
     Dim currentValue As Double = PurchaseAmount
     For yearsDepreciated As UShort = 0 To (EstimatedLife - 2) ' The last year has a special case
       Dim DY As DepreciatedYear
@@ -21,10 +24,12 @@
       DY.Year = PurchaseYear + yearsDepreciated
       DY.LifeLeft = EstimatedLife - yearsDepreciated
       DY.ValueAtBeginning = currentValue
-      DY.AmountDepreciated = DY.ValueAtBeginning * 2 / PurchaseAmount
+      ' This part is different than the StraightLineBalance
+      DY.AmountDepreciated = DY.ValueAtBeginning * 2 / EstimatedLife
       currentValue -= DY.AmountDepreciated
       DY.ValueAtEnd = currentValue
       DY.TotalDepreciation = PurchaseAmount - currentValue
+
       fn(DY)
     Next
     ' Special last case

@@ -20,17 +20,8 @@
     txtAmount.Text = txtAmount.Tag
     txtYearsLeft.Text = txtYearsLeft.Tag
 
-    Debug()
-
     radStraightLine.Checked = True
     radDoubleDeclining.Checked = False
-  End Sub
-
-  Private Sub Debug()
-    txtDescription.Text = "Car"
-    txtYearPurchased.Text = "2000"
-    txtAmount.Text = "20000"
-    txtYearsLeft.Text = "5"
   End Sub
 
   Private Sub btnClose_Click() Handles btnClose.Click
@@ -100,25 +91,38 @@
     End If
 
     Dim uintYearsLeft As UShort = intYearsLeft
-    ' verification good
+
 
     Dim dpMethod As Depreciation
 
+    ' Choose which Depreciation to make based on the radio button
     If radStraightLine.Checked Then
       dpMethod = New StraightLineBalance(
-        asset:=strDescription,
+        desc:=strDescription,
         purchaseYear:=uintYearPurchased,
         purchaseAmount:=dblPurchaseAmount,
         estimatedLife:=uintYearsLeft
       )
     Else
       dpMethod = New DoubleDecliningBalance(
-        asset:=strDescription,
+        desc:=strDescription,
         purchaseYear:=uintYearPurchased,
         purchaseAmount:=dblPurchaseAmount,
         estimatedLife:=uintYearsLeft
       )
     End If
     frmSchedule.DisplayDepreciation(dpMethod)
+
+    ' This wasn't required in the specification document but
+    ' the provided example program had it so I'll put one in
+
+    Dim bolStartNew = MsgBox(
+      Title:="Start a new one?",          ' Named arguments because I 
+      Prompt:="Start a new calculation?", ' forget which order these go in
+      Buttons:=MsgBoxStyle.YesNo
+    )
+    If bolStartNew = MsgBoxResult.Yes Then
+      Reset()
+    End If
   End Sub
 End Class

@@ -14,5 +14,6 @@
 
   ' I didn't want to implement IEnumerable so this is the
   ' interface to consume each DepreciatedYear instead
+  ' ForEachYear :: (DepreciatedYear -> ()) -> ()
   MustOverride Sub ForEachYear(fn As DepreciatedYearConsumer)
 End Class

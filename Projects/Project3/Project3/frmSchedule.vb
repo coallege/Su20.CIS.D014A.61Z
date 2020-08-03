@@ -2,10 +2,13 @@
 
 Public Class frmSchedule
   Private Shared Function FmtMoney(money As Double) As String
-    Return money.ToString("$#,###,##0.00").PadLeft(16)
+    ' Static method to just format the money correctly
+    Return money.ToString("$#,###,##0.00").PadLeft(15)
   End Function
 
   Public Shared Sub DisplayDepreciation(dp As Depreciation)
+    ' Static method that creates the Text Table
+    ' Then makes a new window and shows it
     Dim sb = New StringBuilder(1000)
     sb.AppendLine($"Date/Time of Report   : {Now}")
     sb.AppendLine()
@@ -34,13 +37,15 @@ Public Class frmSchedule
     instance.txtDisplay.SelectionStart = 0 ' So the entire thing isn't highlighted
     instance.ShowDialog()
   End Sub
+
   Private Sub frmSchedule_Resize() Handles Me.Resize
     ' Makes that little drag thing on the bottom right side of the form useable
     tblLayout.Width = Width - 31
     tblLayout.Height = Height - 40
   End Sub
 
-  Private Sub frmSchedule_Load() Handles MyBase.Load
-    AddHandler btnClose.Click, AddressOf Close
+  Private Sub btnClose_Click() Handles btnClose.Click
+    ' Close the form
+    Close()
   End Sub
 End Class
