@@ -25,9 +25,6 @@
     ranks.Sort()
     ranks.Reverse()
     For Each rank As Rank In ranks
-      If rank = Rank.AceLow Then
-        Continue For
-      End If
       Dim strRank = rank.Display
       Dim currentCheckBox = New CheckBox With {
         .Text = strRank,
@@ -66,6 +63,10 @@
     Return cards.Where(Function(card) card.IsSelected).ToArray
   End Function
 
+  Private Function IsStraight(hand As Card()) As Boolean
+
+  End Function
+
   Private Sub btnShow_Click() Handles btnShow.Click
     Dim selectedCards = GetSelectedCards().ToList
     Dim intSelected = selectedCards.Count
@@ -76,11 +77,7 @@
     End If
 
     selectedCards.Sort(Function(cardA As Card, cardB As Card) cardA.Rank < cardB.Rank)
-    For Each AceLow In From card In selectedCards.ToArray
-                       Where card.Rank = Rank.AceHigh
-                       Select card
-      selectedCards.Add(New Card(AceLow.Suit, Rank.AceLow, Nothing))
-    Next
+
 
     Console.WriteLine(
       String.Join(", ", selectedCards.Select(Function(card) card.ToString))
