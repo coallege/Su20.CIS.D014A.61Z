@@ -1,8 +1,8 @@
 {
    "scripts": {
-      "start": "jest"
+      "start": "ava"
    },
    "devDependencies": {
-      "jest": "^26.2.2"
+      "ava": "^3.11.1"
    }
 }

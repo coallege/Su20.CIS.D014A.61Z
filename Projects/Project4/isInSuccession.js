@@ -13,38 +13,29 @@ const isInSuccession2 = ary => ary.reduce((a, v) => v === a + 1, ary[0] - 1);
 /** @param {number[]} ary */
 function isInSuccession3(ary) {
    for (let i = 1; i < ary.length; i++) {
-      if (ary[i] !== ary[i - 1]) {
+      if (ary[i - 1] + 1 !== ary[i]) {
          return false;
       }
    }
    return true;
 }
 
-/**
- * @param {boolean} b
- * @param {string} msg
- */
-function assert(b, name) {
-   if (b) {
-      console.log(`\x1b[32mPass: ${name}\x1b[0m`);
-   } else {
-      console.error(`\x1b[91mFail: ${name}\x1b[0m`);
-   }
-}
+/** @param {number[]} ary */
+const isInSuccession4 = ary => ary.every((v, i, self) => v + 1 === (self[i + 1] || v + 1));
 
-function testFn(fn, v) {
-   assert(fn([1, 2, 3, 4, 5]) === true, `Test 5 digit 1.${v}`);
-   assert(fn([1, 3, 4, 5, 6]) === false, `Test 5 digit 2.${v}`);
-   assert(fn([0, 1, 3, 4, 5]) === false, `Test 5 digit 3.${v}`);
-   assert(fn([4, 5, 6, 7, 8, 9]) === true, `Test 6 digit 4.${v}`);
+const sub = (a,b) => a-b;
+const equals = a => b => a == b;
+const isInSuccession5 = ary => ary.map(sub).every(equals(ary[0]));
 
-   assert(fn([1, 2]) === true, `Test 2 Digit 1.${v}`);
-   assert(fn([2, 3]) === true, `Test 2 Digit 1.${v}`);
-   assert(fn([3, 5]) === false, `Test 2 Digit 1.${v}`);
-   console.log("--------");
-}
+const isInSuccession6=A=>A.map((a,b)=>a-b).every(a=>a===A[0]);
+const isInSuccession7=a=>!a.some((b,c)=>b-c^a[0]);
 
-testFn(isInSuccession1, "1");
-testFn(isInSuccession2, "2");
-testFn(isInSuccession3, "3");
-
+module.exports = {
+   isInSuccession1,
+   isInSuccession2,
+   isInSuccession3,
+   isInSuccession4,
+   isInSuccession5,
+   isInSuccession6,
+   isInSuccession7,
+};

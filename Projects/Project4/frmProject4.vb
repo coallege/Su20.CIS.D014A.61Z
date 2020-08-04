@@ -63,6 +63,17 @@
     Return cards.Where(Function(card) card.IsSelected).ToArray
   End Function
 
+  Private Function IsInSuccession(ary() As Integer) As Boolean
+    For idx = 0 To ary.Length - 2
+      Dim currentVal = ary(idx)
+      Dim nextVal = ary(idx)
+      If currentVal + 1 <> nextVal Then
+        Return False
+      End If
+    Next
+    Return True
+  End Function
+
   Private Function IsStraight(hand As Card()) As Boolean
 
   End Function
@@ -77,7 +88,6 @@
     End If
 
     selectedCards.Sort(Function(cardA As Card, cardB As Card) cardA.Rank < cardB.Rank)
-
 
     Console.WriteLine(
       String.Join(", ", selectedCards.Select(Function(card) card.ToString))
