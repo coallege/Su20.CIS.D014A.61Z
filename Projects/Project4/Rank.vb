@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
 
 Public Enum Rank
-  Ace = 14 ' Start at 14
+  AceHigh = 14
   King = 13
   Queen = 12
   Jack = 11
@@ -14,13 +14,14 @@ Public Enum Rank
   Four = 4
   Three = 3
   Two = 2
+  AceLow = 1
 End Enum
 
 Module RankExtensions
   <Extension()>
-  Public Function toString(currentRank As Rank)
+  Public Function Display(currentRank As Rank)
     Select Case currentRank
-      Case = Rank.Ace
+      Case = Rank.AceHigh
         Return "Ace"
       Case = Rank.King
         Return "King"
@@ -46,8 +47,10 @@ Module RankExtensions
         Return "3"
       Case Rank.Two
         Return "2"
+      Case Rank.AceLow
+        Return "Ace"
       Case Else
-        Return currentRank.ToString
+        Throw New Exception("This should never happen")
     End Select
   End Function
 End Module

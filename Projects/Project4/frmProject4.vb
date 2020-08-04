@@ -21,8 +21,13 @@
     Dim constX = offset.X
     Dim currentY = offset.Y
 
-    For Each rank As Rank In [Enum].GetValues(GetType(Rank))
-      Dim strRank = rank.ToString
+    Dim ranks = [Enum].GetValues(GetType(Rank)).OfType(Of Rank).ToList()
+    ranks.Sort(Function(rankA As Rank, rankB As Rank) rankB < rankA)
+    For Each rank As Rank In ranks
+      If rank = Rank.AceLow Then
+        Return
+      End If
+      Dim strRank = rank.Display
       Dim currentCheckBox = New CheckBox With {
         .Text = strRank,
         .AutoSize = True,
