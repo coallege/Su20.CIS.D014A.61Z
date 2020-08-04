@@ -84,9 +84,38 @@
     If hand(4).Rank = Rank.Ace Then
       rankHand.RemoveAt(4)
       rankHand.Prepend(1) ' Low Ace
+      ' Alright short rant time:
+      ' I would have used Rank.LowAce but that just creates
+      ' So many annoying issues and it's just best to have
+      ' one Ace, even if it's a HighAce. I might change it
+      ' Later by adding like AceLow and AceHigh and then
+      ' branching in the function that makes all of the
+      ' checkboxes but for now, I really can't be botherd
+      ' and it's not worth replacing 1 with Rank.AceLow
       Return IsInSuccession(rankHand)
     End If
     Return False
+  End Function
+
+  Private Function OfAKinds(hand As List(Of Card)) As List(Of OfAKind)
+    Dim outList = New List(Of OfAKind)
+    Dim currentKind As OfAKind = New OfAKind With {
+      .amount = 0,
+      .kind = hand(0).Rank
+    }
+    For Each card In hand
+      If card.Rank = currentKind.kind Then
+        currentKind.amount += 1
+      Else
+        outList.Add(currentKind)
+        currentKind = New OfAKind With {
+          .amount = 1,
+          .kind = card.Rank
+        }
+      End If
+    Next
+    outList.Add(currentKind) ' gotta add the last one
+    Return outList
   End Function
 
   Private Sub btnShow_Click() Handles btnShow.Click
@@ -104,8 +133,12 @@
       String.Join(", ", selectedCards.Select(Function(card) card.ToString))
     )
 
-    Dim bolStraight = IsStraight(selectedCards)
+    Console.WriteLine(
+      String.Join(", ", OfAKinds(selectedCards).Select(Function(oak) $"{oak.amount}x{oak.kind.Display}"))
+    )
 
-    Console.WriteLine($"Straight: {bolStraight}")
+    Dim bolStraight = IsStraight(selectedCards)
+    Dim bolFlush = selectedCards.TrueForAll(Function(card) card.Suit = selectedCards(0).Suit)
+    Console.WriteLine($"Straight: {bolStraight}, Flush: {bolFlush}")
   End Sub
 End Class
