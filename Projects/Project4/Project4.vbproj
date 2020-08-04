@@ -73,6 +73,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.vb" />
+    <Compile Include="Rank.vb" />
+    <Compile Include="Suit.vb" />
     <Compile Include="frmProject4.vb">
       <SubType>Form</SubType>
     </Compile>

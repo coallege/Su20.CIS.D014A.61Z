@@ -24,19 +24,24 @@ Partial Class frmProject4
     Private Sub InitializeComponent()
         Me.tblLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.grpSpades = New System.Windows.Forms.GroupBox()
+        Me.grpSpades_dummy = New System.Windows.Forms.CheckBox()
         Me.grpHearts = New System.Windows.Forms.GroupBox()
+        Me.grpHearts_dummy = New System.Windows.Forms.CheckBox()
         Me.grpDiamonds = New System.Windows.Forms.GroupBox()
+        Me.grpDiamonds_dummy = New System.Windows.Forms.CheckBox()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.grpClubs = New System.Windows.Forms.GroupBox()
-        Me.grpDiamonds_dummy = New System.Windows.Forms.CheckBox()
-        Me.grpHearts_dummy = New System.Windows.Forms.CheckBox()
-        Me.grpSpades_dummy = New System.Windows.Forms.CheckBox()
         Me.grpClubs_dummy = New System.Windows.Forms.CheckBox()
+        Me.tblButtons = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnRestart = New System.Windows.Forms.Button()
+        Me.btnShow = New System.Windows.Forms.Button()
         Me.tblLayout.SuspendLayout()
         Me.grpSpades.SuspendLayout()
         Me.grpHearts.SuspendLayout()
         Me.grpDiamonds.SuspendLayout()
         Me.grpClubs.SuspendLayout()
+        Me.tblButtons.SuspendLayout()
         Me.SuspendLayout()
         '
         'tblLayout
@@ -51,53 +56,88 @@ Partial Class frmProject4
         Me.tblLayout.Controls.Add(Me.grpDiamonds, 1, 1)
         Me.tblLayout.Controls.Add(Me.lblTitle, 0, 0)
         Me.tblLayout.Controls.Add(Me.grpClubs, 0, 1)
+        Me.tblLayout.Controls.Add(Me.tblButtons, 0, 2)
         Me.tblLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tblLayout.Location = New System.Drawing.Point(0, 0)
         Me.tblLayout.Name = "tblLayout"
-        Me.tblLayout.RowCount = 2
+        Me.tblLayout.RowCount = 3
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tblLayout.Size = New System.Drawing.Size(394, 422)
+        Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.tblLayout.Size = New System.Drawing.Size(394, 461)
         Me.tblLayout.TabIndex = 0
         '
         'grpSpades
         '
         Me.grpSpades.Controls.Add(Me.grpSpades_dummy)
-        Me.grpSpades.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpSpades.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpSpades.Location = New System.Drawing.Point(304, 50)
         Me.grpSpades.Margin = New System.Windows.Forms.Padding(10)
         Me.grpSpades.Name = "grpSpades"
         Me.grpSpades.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpSpades.Size = New System.Drawing.Size(80, 362)
+        Me.grpSpades.Size = New System.Drawing.Size(80, 351)
         Me.grpSpades.TabIndex = 0
         Me.grpSpades.TabStop = False
         Me.grpSpades.Text = "Spades"
         '
+        'grpSpades_dummy
+        '
+        Me.grpSpades_dummy.AutoSize = True
+        Me.grpSpades_dummy.Location = New System.Drawing.Point(14, 27)
+        Me.grpSpades_dummy.Name = "grpSpades_dummy"
+        Me.grpSpades_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpSpades_dummy.TabIndex = 0
+        Me.grpSpades_dummy.Text = "###"
+        Me.grpSpades_dummy.UseVisualStyleBackColor = True
+        Me.grpSpades_dummy.Visible = False
+        '
         'grpHearts
         '
         Me.grpHearts.Controls.Add(Me.grpHearts_dummy)
-        Me.grpHearts.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpHearts.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpHearts.Location = New System.Drawing.Point(206, 50)
         Me.grpHearts.Margin = New System.Windows.Forms.Padding(10)
         Me.grpHearts.Name = "grpHearts"
         Me.grpHearts.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpHearts.Size = New System.Drawing.Size(78, 362)
+        Me.grpHearts.Size = New System.Drawing.Size(78, 351)
         Me.grpHearts.TabIndex = 0
         Me.grpHearts.TabStop = False
         Me.grpHearts.Text = "Hearts"
         '
+        'grpHearts_dummy
+        '
+        Me.grpHearts_dummy.AutoSize = True
+        Me.grpHearts_dummy.Location = New System.Drawing.Point(13, 27)
+        Me.grpHearts_dummy.Name = "grpHearts_dummy"
+        Me.grpHearts_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpHearts_dummy.TabIndex = 0
+        Me.grpHearts_dummy.Text = "###"
+        Me.grpHearts_dummy.UseVisualStyleBackColor = True
+        Me.grpHearts_dummy.Visible = False
+        '
         'grpDiamonds
         '
         Me.grpDiamonds.Controls.Add(Me.grpDiamonds_dummy)
-        Me.grpDiamonds.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpDiamonds.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpDiamonds.Location = New System.Drawing.Point(108, 50)
         Me.grpDiamonds.Margin = New System.Windows.Forms.Padding(10)
         Me.grpDiamonds.Name = "grpDiamonds"
         Me.grpDiamonds.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpDiamonds.Size = New System.Drawing.Size(78, 362)
+        Me.grpDiamonds.Size = New System.Drawing.Size(78, 351)
         Me.grpDiamonds.TabIndex = 0
         Me.grpDiamonds.TabStop = False
         Me.grpDiamonds.Text = "Diamonds"
+        '
+        'grpDiamonds_dummy
+        '
+        Me.grpDiamonds_dummy.AutoSize = True
+        Me.grpDiamonds_dummy.Location = New System.Drawing.Point(13, 27)
+        Me.grpDiamonds_dummy.Name = "grpDiamonds_dummy"
+        Me.grpDiamonds_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpDiamonds_dummy.TabIndex = 0
+        Me.grpDiamonds_dummy.Text = "###"
+        Me.grpDiamonds_dummy.UseVisualStyleBackColor = True
+        Me.grpDiamonds_dummy.Visible = False
         '
         'lblTitle
         '
@@ -115,48 +155,15 @@ Partial Class frmProject4
         'grpClubs
         '
         Me.grpClubs.Controls.Add(Me.grpClubs_dummy)
-        Me.grpClubs.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpClubs.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpClubs.Location = New System.Drawing.Point(10, 50)
         Me.grpClubs.Margin = New System.Windows.Forms.Padding(10)
         Me.grpClubs.Name = "grpClubs"
         Me.grpClubs.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpClubs.Size = New System.Drawing.Size(78, 362)
+        Me.grpClubs.Size = New System.Drawing.Size(78, 351)
         Me.grpClubs.TabIndex = 0
         Me.grpClubs.TabStop = False
         Me.grpClubs.Text = "Clubs"
-        '
-        'grpDiamonds_dummy
-        '
-        Me.grpDiamonds_dummy.AutoSize = True
-        Me.grpDiamonds_dummy.Location = New System.Drawing.Point(15, 27)
-        Me.grpDiamonds_dummy.Name = "grpDiamonds_dummy"
-        Me.grpDiamonds_dummy.Size = New System.Drawing.Size(47, 19)
-        Me.grpDiamonds_dummy.TabIndex = 0
-        Me.grpDiamonds_dummy.Text = "###"
-        Me.grpDiamonds_dummy.UseVisualStyleBackColor = True
-        Me.grpDiamonds_dummy.Visible = False
-        '
-        'grpHearts_dummy
-        '
-        Me.grpHearts_dummy.AutoSize = True
-        Me.grpHearts_dummy.Location = New System.Drawing.Point(15, 27)
-        Me.grpHearts_dummy.Name = "grpHearts_dummy"
-        Me.grpHearts_dummy.Size = New System.Drawing.Size(47, 19)
-        Me.grpHearts_dummy.TabIndex = 0
-        Me.grpHearts_dummy.Text = "###"
-        Me.grpHearts_dummy.UseVisualStyleBackColor = True
-        Me.grpHearts_dummy.Visible = False
-        '
-        'grpSpades_dummy
-        '
-        Me.grpSpades_dummy.AutoSize = True
-        Me.grpSpades_dummy.Location = New System.Drawing.Point(15, 27)
-        Me.grpSpades_dummy.Name = "grpSpades_dummy"
-        Me.grpSpades_dummy.Size = New System.Drawing.Size(47, 19)
-        Me.grpSpades_dummy.TabIndex = 0
-        Me.grpSpades_dummy.Text = "###"
-        Me.grpSpades_dummy.UseVisualStyleBackColor = True
-        Me.grpSpades_dummy.Visible = False
         '
         'grpClubs_dummy
         '
@@ -169,15 +176,71 @@ Partial Class frmProject4
         Me.grpClubs_dummy.UseVisualStyleBackColor = True
         Me.grpClubs_dummy.Visible = False
         '
+        'tblButtons
+        '
+        Me.tblButtons.ColumnCount = 3
+        Me.tblLayout.SetColumnSpan(Me.tblButtons, 4)
+        Me.tblButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.tblButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.tblButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.tblButtons.Controls.Add(Me.btnClose, 2, 0)
+        Me.tblButtons.Controls.Add(Me.btnRestart, 1, 0)
+        Me.tblButtons.Controls.Add(Me.btnShow, 0, 0)
+        Me.tblButtons.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tblButtons.Location = New System.Drawing.Point(3, 414)
+        Me.tblButtons.Name = "tblButtons"
+        Me.tblButtons.RowCount = 1
+        Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblButtons.Size = New System.Drawing.Size(388, 44)
+        Me.tblButtons.TabIndex = 1
+        '
+        'btnClose
+        '
+        Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Location = New System.Drawing.Point(261, 6)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(123, 32)
+        Me.btnClose.TabIndex = 2
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
+        '
+        'btnRestart
+        '
+        Me.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRestart.Location = New System.Drawing.Point(132, 6)
+        Me.btnRestart.Name = "btnRestart"
+        Me.btnRestart.Size = New System.Drawing.Size(123, 32)
+        Me.btnRestart.TabIndex = 1
+        Me.btnRestart.Text = "Restart"
+        Me.btnRestart.UseVisualStyleBackColor = True
+        '
+        'btnShow
+        '
+        Me.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnShow.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnShow.Location = New System.Drawing.Point(3, 6)
+        Me.btnShow.Name = "btnShow"
+        Me.btnShow.Size = New System.Drawing.Size(123, 32)
+        Me.btnShow.TabIndex = 0
+        Me.btnShow.Text = "Show Poker Hand"
+        Me.btnShow.UseVisualStyleBackColor = True
+        '
         'frmProject4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(394, 422)
+        Me.ClientSize = New System.Drawing.Size(394, 461)
         Me.Controls.Add(Me.tblLayout)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MinimumSize = New System.Drawing.Size(410, 39)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(410, 500)
+        Me.MinimumSize = New System.Drawing.Size(410, 500)
         Me.Name = "frmProject4"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Project 4: Poker Hand Determiner"
         Me.tblLayout.ResumeLayout(False)
         Me.tblLayout.PerformLayout()
@@ -189,6 +252,7 @@ Partial Class frmProject4
         Me.grpDiamonds.PerformLayout()
         Me.grpClubs.ResumeLayout(False)
         Me.grpClubs.PerformLayout()
+        Me.tblButtons.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -203,4 +267,8 @@ Partial Class frmProject4
     Friend WithEvents grpHearts_dummy As CheckBox
     Friend WithEvents grpDiamonds_dummy As CheckBox
     Friend WithEvents grpClubs_dummy As CheckBox
+    Friend WithEvents tblButtons As TableLayoutPanel
+    Friend WithEvents btnShow As Button
+    Friend WithEvents btnRestart As Button
+    Friend WithEvents btnClose As Button
 End Class
