@@ -118,6 +118,10 @@
     Return outList
   End Function
 
+  Private Function OaKAmount(n As UShort) As Predicate(Of OfAKind)
+    Return Function(oak As OfAKind) oak.amount = n
+  End Function
+
   Private Sub btnShow_Click() Handles btnShow.Click
     Dim selectedCards = GetSelectedCards().ToList
     Dim intSelected = selectedCards.Count
@@ -129,16 +133,52 @@
 
     selectedCards.Sort(Function(cardA As Card, cardB As Card) cardA.Rank < cardB.Rank)
 
-    Console.WriteLine(
-      String.Join(", ", selectedCards.Select(Function(card) card.ToString))
-    )
-
-    Console.WriteLine(
-      String.Join(", ", OfAKinds(selectedCards).Select(Function(oak) $"{oak.amount}x{oak.kind.Display}"))
-    )
-
     Dim bolStraight = IsStraight(selectedCards)
     Dim bolFlush = selectedCards.TrueForAll(Function(card) card.Suit = selectedCards(0).Suit)
-    Console.WriteLine($"Straight: {bolStraight}, Flush: {bolFlush}")
+
+    If bolStraight AndAlso bolFlush Then
+      If selectedCards(0).Rank = Rank.Ten Then
+        MsgBox("Royal Flush")
+      Else
+        MsgBox("Straight Flush")
+      End If
+      Return
+    End If
+
+    Dim OaKs = OfAKinds(selectedCards)
+    If OaKs.Exists(OaKAmount(4)) Then
+      MsgBox("Four of a Kind")
+      Return
+    End If
+
+    Dim bol3ofAKind = OaKs.Exists(OaKAmount(3))
+    Dim int2ofAKind = OaKs.Where(Function(v) OaKAmount(2)(v)).Count
+    Dim bol2ofAkind = int2ofAKind > 0
+    If bol3ofAKind AndAlso bol2ofAkind Then
+      MsgBox("Full House")
+      Return
+    End If
+
+    If bolFlush Then
+      MsgBox("Flush")
+      Return
+    End If
+
+    If bolStraight Then
+      MsgBox("Straight")
+      Return
+    End If
+
+    If bol3ofAKind Then
+      MsgBox("Three of a Kind")
+      Return
+    End If
+
+    If int2ofAKind = 2 Then
+      MsgBox("Two of a Kind")
+      Return
+    End If
+
+    MsgBox("Nothing")
   End Sub
 End Class
