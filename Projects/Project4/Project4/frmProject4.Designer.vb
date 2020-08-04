@@ -22,6 +22,7 @@ Partial Class frmProject4
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProject4))
         Me.tblLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.grpSpades = New System.Windows.Forms.GroupBox()
         Me.grpSpades_dummy = New System.Windows.Forms.CheckBox()
@@ -64,7 +65,7 @@ Partial Class frmProject4
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tblLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
-        Me.tblLayout.Size = New System.Drawing.Size(394, 461)
+        Me.tblLayout.Size = New System.Drawing.Size(392, 453)
         Me.tblLayout.TabIndex = 0
         '
         'grpSpades
@@ -75,7 +76,7 @@ Partial Class frmProject4
         Me.grpSpades.Margin = New System.Windows.Forms.Padding(10)
         Me.grpSpades.Name = "grpSpades"
         Me.grpSpades.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpSpades.Size = New System.Drawing.Size(80, 351)
+        Me.grpSpades.Size = New System.Drawing.Size(78, 343)
         Me.grpSpades.TabIndex = 0
         Me.grpSpades.TabStop = False
         Me.grpSpades.Text = "Spades"
@@ -85,7 +86,7 @@ Partial Class frmProject4
         Me.grpSpades_dummy.AutoSize = True
         Me.grpSpades_dummy.Location = New System.Drawing.Point(14, 27)
         Me.grpSpades_dummy.Name = "grpSpades_dummy"
-        Me.grpSpades_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpSpades_dummy.Size = New System.Drawing.Size(54, 22)
         Me.grpSpades_dummy.TabIndex = 0
         Me.grpSpades_dummy.Text = "###"
         Me.grpSpades_dummy.UseVisualStyleBackColor = True
@@ -99,7 +100,7 @@ Partial Class frmProject4
         Me.grpHearts.Margin = New System.Windows.Forms.Padding(10)
         Me.grpHearts.Name = "grpHearts"
         Me.grpHearts.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpHearts.Size = New System.Drawing.Size(78, 351)
+        Me.grpHearts.Size = New System.Drawing.Size(78, 343)
         Me.grpHearts.TabIndex = 0
         Me.grpHearts.TabStop = False
         Me.grpHearts.Text = "Hearts"
@@ -109,7 +110,7 @@ Partial Class frmProject4
         Me.grpHearts_dummy.AutoSize = True
         Me.grpHearts_dummy.Location = New System.Drawing.Point(13, 27)
         Me.grpHearts_dummy.Name = "grpHearts_dummy"
-        Me.grpHearts_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpHearts_dummy.Size = New System.Drawing.Size(54, 22)
         Me.grpHearts_dummy.TabIndex = 0
         Me.grpHearts_dummy.Text = "###"
         Me.grpHearts_dummy.UseVisualStyleBackColor = True
@@ -123,7 +124,7 @@ Partial Class frmProject4
         Me.grpDiamonds.Margin = New System.Windows.Forms.Padding(10)
         Me.grpDiamonds.Name = "grpDiamonds"
         Me.grpDiamonds.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpDiamonds.Size = New System.Drawing.Size(78, 351)
+        Me.grpDiamonds.Size = New System.Drawing.Size(78, 343)
         Me.grpDiamonds.TabIndex = 0
         Me.grpDiamonds.TabStop = False
         Me.grpDiamonds.Text = "Diamonds"
@@ -133,7 +134,7 @@ Partial Class frmProject4
         Me.grpDiamonds_dummy.AutoSize = True
         Me.grpDiamonds_dummy.Location = New System.Drawing.Point(13, 27)
         Me.grpDiamonds_dummy.Name = "grpDiamonds_dummy"
-        Me.grpDiamonds_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpDiamonds_dummy.Size = New System.Drawing.Size(54, 22)
         Me.grpDiamonds_dummy.TabIndex = 0
         Me.grpDiamonds_dummy.Text = "###"
         Me.grpDiamonds_dummy.UseVisualStyleBackColor = True
@@ -146,9 +147,9 @@ Partial Class frmProject4
         Me.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.tblLayout.SetColumnSpan(Me.lblTitle, 4)
         Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(52, 4)
+        Me.lblTitle.Location = New System.Drawing.Point(22, 1)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(289, 31)
+        Me.lblTitle.Size = New System.Drawing.Size(347, 38)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Poker Hand Determiner"
         '
@@ -160,7 +161,7 @@ Partial Class frmProject4
         Me.grpClubs.Margin = New System.Windows.Forms.Padding(10)
         Me.grpClubs.Name = "grpClubs"
         Me.grpClubs.Padding = New System.Windows.Forms.Padding(0)
-        Me.grpClubs.Size = New System.Drawing.Size(78, 351)
+        Me.grpClubs.Size = New System.Drawing.Size(78, 343)
         Me.grpClubs.TabIndex = 0
         Me.grpClubs.TabStop = False
         Me.grpClubs.Text = "Clubs"
@@ -170,7 +171,7 @@ Partial Class frmProject4
         Me.grpClubs_dummy.AutoSize = True
         Me.grpClubs_dummy.Location = New System.Drawing.Point(12, 27)
         Me.grpClubs_dummy.Name = "grpClubs_dummy"
-        Me.grpClubs_dummy.Size = New System.Drawing.Size(47, 19)
+        Me.grpClubs_dummy.Size = New System.Drawing.Size(54, 22)
         Me.grpClubs_dummy.TabIndex = 0
         Me.grpClubs_dummy.Text = "###"
         Me.grpClubs_dummy.UseVisualStyleBackColor = True
@@ -187,7 +188,7 @@ Partial Class frmProject4
         Me.tblButtons.Controls.Add(Me.btnRestart, 1, 0)
         Me.tblButtons.Controls.Add(Me.btnShow, 0, 0)
         Me.tblButtons.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tblButtons.Location = New System.Drawing.Point(3, 414)
+        Me.tblButtons.Location = New System.Drawing.Point(3, 406)
         Me.tblButtons.Name = "tblButtons"
         Me.tblButtons.RowCount = 1
         Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -251,14 +252,14 @@ Partial Class frmProject4
         Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tblButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tblButtons.Size = New System.Drawing.Size(388, 44)
+        Me.tblButtons.Size = New System.Drawing.Size(386, 44)
         Me.tblButtons.TabIndex = 1
         '
         'btnClose
         '
         Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.Location = New System.Drawing.Point(261, 6)
+        Me.btnClose.Location = New System.Drawing.Point(259, 6)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(123, 32)
         Me.btnClose.TabIndex = 62
@@ -269,9 +270,9 @@ Partial Class frmProject4
         '
         Me.btnRestart.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRestart.Location = New System.Drawing.Point(132, 6)
+        Me.btnRestart.Location = New System.Drawing.Point(131, 6)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(123, 32)
+        Me.btnRestart.Size = New System.Drawing.Size(122, 32)
         Me.btnRestart.TabIndex = 61
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.UseVisualStyleBackColor = True
@@ -282,19 +283,20 @@ Partial Class frmProject4
         Me.btnShow.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnShow.Location = New System.Drawing.Point(3, 6)
         Me.btnShow.Name = "btnShow"
-        Me.btnShow.Size = New System.Drawing.Size(123, 32)
+        Me.btnShow.Size = New System.Drawing.Size(122, 32)
         Me.btnShow.TabIndex = 60
         Me.btnShow.Text = "Show Poker Hand"
         Me.btnShow.UseVisualStyleBackColor = True
         '
         'frmProject4
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(394, 461)
+        Me.ClientSize = New System.Drawing.Size(392, 453)
         Me.Controls.Add(Me.tblLayout)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(410, 500)
         Me.MinimumSize = New System.Drawing.Size(410, 500)
