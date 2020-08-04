@@ -18,6 +18,6 @@
   End Sub
 
   Public Overrides Function ToString() As String
-    Return $"{Rank} of {Suit}"
+    Return $"{Rank.Display} of {Suit}"
   End Function
 End Class

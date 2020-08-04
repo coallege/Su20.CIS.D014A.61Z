@@ -22,10 +22,11 @@
     Dim currentY = offset.Y
 
     Dim ranks = [Enum].GetValues(GetType(Rank)).OfType(Of Rank).ToList()
-    ranks.Sort(Function(rankA As Rank, rankB As Rank) rankB < rankA)
+    ranks.Sort()
+    ranks.Reverse()
     For Each rank As Rank In ranks
       If rank = Rank.AceLow Then
-        Return
+        Continue For
       End If
       Dim strRank = rank.Display
       Dim currentCheckBox = New CheckBox With {
@@ -65,15 +66,24 @@
     Return cards.Where(Function(card) card.IsSelected).ToArray
   End Function
 
-  Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
-    Dim selectedCards = GetSelectedCards()
-    Dim intSelected = selectedCards.Length
+  Private Sub btnShow_Click() Handles btnShow.Click
+    Dim selectedCards = GetSelectedCards().ToList
+    Dim intSelected = selectedCards.Count
     If intSelected <> 5 Then
       Dim strCards = If(intSelected = 1, "card", "cards")
       MsgBox($"You have selected {intSelected} {strCards}.{vbCrLf}Please select 5 cards.")
       Return
     End If
 
-    Array.Sort(selectedCards, Function(cardA, cardB) 1)
+    selectedCards.Sort(Function(cardA As Card, cardB As Card) cardA.Rank < cardB.Rank)
+    For Each AceLow In From card In selectedCards.ToArray
+                       Where card.Rank = Rank.AceHigh
+                       Select card
+      selectedCards.Add(New Card(AceLow.Suit, Rank.AceLow, Nothing))
+    Next
+
+    Console.WriteLine(
+      String.Join(", ", selectedCards.Select(Function(card) card.ToString))
+    )
   End Sub
 End Class
