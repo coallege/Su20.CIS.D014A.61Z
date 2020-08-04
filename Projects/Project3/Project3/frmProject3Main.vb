@@ -5,6 +5,9 @@
   '*** Date   : 08/01/2020
   '****************************************************************
   Private Sub frmProject3Main_Load() Handles MyBase.Load
+    AddHandler btnClose.Click, AddressOf Close
+    ' I could have assigned these in the
+    ' Design Editor but they're fine here
     txtDescription.Tag = "<Enter Item Description>"
     txtYearPurchased.Tag = "<Enter Year Purchased>"
     txtAmount.Tag = "<Enter Amount>"
@@ -22,11 +25,6 @@
 
     radStraightLine.Checked = True
     radDoubleDeclining.Checked = False
-  End Sub
-
-  Private Sub btnClose_Click() Handles btnClose.Click
-    ' Closes the Form
-    Close()
   End Sub
 
   Private Sub btnCalc_Click() Handles btnCalc.Click
@@ -91,7 +89,6 @@
     End If
 
     Dim uintYearsLeft As UShort = intYearsLeft
-
 
     Dim dpMethod As Depreciation
 

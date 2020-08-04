@@ -54,8 +54,4 @@ Public Class frmSchedule
     ' Close the form
     Close()
   End Sub
-
-  Private Sub frmSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-  End Sub
 End Class
