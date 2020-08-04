@@ -63,10 +63,10 @@
     Return cards.Where(Function(card) card.IsSelected).ToArray
   End Function
 
-  Private Function IsInSuccession(ary() As Integer) As Boolean
-    For idx = 0 To ary.Length - 2
-      Dim currentVal = ary(idx)
-      Dim nextVal = ary(idx)
+  Private Function IsInSuccession(nums As List(Of Integer)) As Boolean
+    For idx = 0 To nums.Count - 2
+      Dim currentVal = nums(idx)
+      Dim nextVal = nums(idx + 1)
       If currentVal + 1 <> nextVal Then
         Return False
       End If
@@ -74,8 +74,19 @@
     Return True
   End Function
 
-  Private Function IsStraight(hand As Card()) As Boolean
+  Private Function IsStraight(hand As List(Of Card)) As Boolean
+    Dim rankHand = (From card In hand Select card.Rank).Cast(Of Integer).ToList
+    If IsInSuccession(rankHand) Then
+      Return True
+    End If
 
+    ' Special case if there's an ace high
+    If hand(4).Rank = Rank.Ace Then
+      rankHand.RemoveAt(4)
+      rankHand.Prepend(1) ' Low Ace
+      Return IsInSuccession(rankHand)
+    End If
+    Return False
   End Function
 
   Private Sub btnShow_Click() Handles btnShow.Click
@@ -92,5 +103,9 @@
     Console.WriteLine(
       String.Join(", ", selectedCards.Select(Function(card) card.ToString))
     )
+
+    Dim bolStraight = IsStraight(selectedCards)
+
+    Console.WriteLine($"Straight: {bolStraight}")
   End Sub
 End Class
