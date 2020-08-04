@@ -18,7 +18,9 @@ End Enum
 
 Module RankExtensions
   <Extension()>
-  Public Function Display(currentRank As Rank)
+  Public Function Display(currentRank As Rank) As String
+    ' Extension method so that I can call Rank.*.Display
+    ' That way I can keep the logic for rank all in one file
     Select Case currentRank
       Case = Rank.Ace
         Return "Ace"
