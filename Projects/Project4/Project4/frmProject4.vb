@@ -81,9 +81,9 @@
     ).First
   End Function
 
-  Private Function GetSelectedCards() As Card()
+  Private Function GetSelectedCards() As List(Of Card)
     ' it gets the selected cards
-    Return cards.Where(Function(card) card.IsSelected).ToArray
+    Return cards.Where(Function(card) card.IsSelected).ToList
   End Function
 
   Private Function IsInSuccession(nums As List(Of Integer)) As Boolean
@@ -100,7 +100,7 @@
   End Function
 
   Private Function IsStraight(hand As List(Of Card)) As Boolean
-    Dim rankHand = (From card In hand Select card.Rank).Cast(Of Integer).ToList
+    Dim rankHand = hand.Select(Function(card) card.Rank).Cast(Of Integer).ToList
     If IsInSuccession(rankHand) Then
       Return True
     End If
@@ -164,7 +164,7 @@
     ' Display it through a MsgBox
 
     ' Check if the user has selected 5 cards
-    Dim selectedCards = GetSelectedCards().ToList
+    Dim selectedCards = GetSelectedCards()
     Dim intSelected = selectedCards.Count
     If intSelected <> 5 Then
       Dim strCards = If(intSelected = 1, "card", "cards")

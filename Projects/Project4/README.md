@@ -1,7 +1,19 @@
-# Project4 - Poker Hand Determiner
+# Project4: Poker Hand Determiner
+
+These messages are about how I feel about this Program.
+
+```text
+10:02 PM coalpha: .NET APIs are designed in a way that makes me suspect that
+                  the designers get paid every time someone makes a type
+                  conversion or does a type cast
+10:02 PM coalpha: nonstop boxing and unboxing, Arrays to Lists, Lists to Arrays
+                  ... jesus
+10:03 PM coalpha: IEnumerables to Lists, IEnumerables to IEnumerators,
+                  IEnumerators to Arrays, aaaaaaaaaaa
+```
 
 ![](Project4/ace.png)
 
-*Yes, I made work of art myself*
+![](Project4.png)
 
-![](2020-08-04-15-21-01.png)
+[*spec*](../../Resources/Projects_Students/Project4/Project4_Specifications.pdf)
