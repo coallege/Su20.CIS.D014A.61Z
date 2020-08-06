@@ -16,7 +16,7 @@
 *The projects on my desktop :)*
 
 1. [Project1: Length Converter](Projects/Project1)
-2. [Project2: Fast Food Order Menu](Project/Project2)
+2. [Project2: Fast Food Order Menu](Projects/Project2)
 3. [Project3: Depreciation to a Salvage Value of Zero](Projects/Project3)
 4. [Project4: Poker Hand Determiner](Projects/Project4)
 5. [parseHomeworkName: A native GUI application in Go](Misc/parseHomeworkName)
