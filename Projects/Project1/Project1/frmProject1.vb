@@ -4,7 +4,7 @@
   '*** Author : Cole Gannon
   '*** Date   : 7/15/2020 (late)
   '******************************************
-  Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
+  Private Sub btnConvert_Click() Handles btnConvert.Click
     ' Converts the input from US distance to Metric distance and displays it
     ResetLstOutput()
     Dim intMiles = GetIntFromTextBox(txtMiles)
